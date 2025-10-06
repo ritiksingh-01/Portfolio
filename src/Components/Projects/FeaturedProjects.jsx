@@ -3,32 +3,32 @@ import { ArrowRight, Github, ExternalLink, Code, Palette } from "lucide-react";
 
 const developmentProjects = [
   {
-    title: "Zenith",
-    description: "A decentralized music application enabling artists to mint and sell their music as NFTs.",
-    image: "/api/placeholder/500/300",
-    technologies: ["Solidity", "Polygon", "Ethereum", "IPFS", "+6"],
+    title: "SkillBridge",
+    description: "A powerful, modern, and intuitive mentorship platform that bridges the gap between aspiring mentees and experienced mentors.",
+    image: "/skillbridge.png",
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     features: [
       "Built for 150+ artists to mint and sell NFTs with Solidity and IPFS",
       "Enabled 300+ transactions and 30% faster monetization via Polygon"
     ]
   },
   {
-    title: "PokeArena",
-    description: "A blockchain-based platform digitizing Pokémon cards as NFTs with secure trading and battling features.",
-    image: "/api/placeholder/500/300",
-    technologies: ["Move", "Aptos", "NFTs", "React", "+7"],
+    title: "Employee Management System",
+    description: "A modern, intuitive web-based Employee Management System built with React.js. This project streamlines task assignment and management, providing distinct dashboards for employees and administrators.",
+    image: "/employeeMS.png",
+    technologies: ["React.js", "Tailwind CSS", "Local Storage API"],
     features: [
       "Developed a blockchain-based platform digitizing 300+ Pokémon cards as NFTs",
       "Enabled secure trading and battling with on-chain verified ownership and battle logic"
     ]
   },
   {
-    title: "Lightning Time",
-    description: "A Bitcoin Lightning Network-powered time tracking web app that allows users to check in for work and automatically receive payments in Satoshis.",
-    image: "/api/placeholder/500/300",
-    technologies: ["Bitcoin", "Lightning Network", "LNbits", "Soulbound Tokens", "+7"],
+    title: "Crop Yield Weather Impact Dashboard",
+    description: "A web app that provides insights into the impact of weather on crop yields, helping farmers make informed decisions.",
+    image: "/cropYD.png",
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     features: [
-      "Built a real-time time tracking system with automatic Bitcoin payments via Lightning Network",
+      "Developed a real-time weather data integration system using OpenWeatherMap API",
       "Implemented an admin dashboard for monitoring work time and payment statistics"
     ]
   }
@@ -36,9 +36,9 @@ const developmentProjects = [
 
 const designProjects = [
   {
-    title: "E-Commerce Dashboard",
-    description: "Modern admin dashboard design for e-commerce platforms with analytics and inventory management.",
-    image: "/api/placeholder/500/300",
+    title: "Nike Landing Page",
+    description: "Modern landing page design for Nike's e-commerce platform with a focus on product showcasing.",
+    image: "/NikeLandingPage.png",
     technologies: ["Figma", "UI/UX", "Design System", "Prototyping"],
     features: [
       "Designed comprehensive dashboard with 20+ screens and components",
@@ -46,10 +46,10 @@ const designProjects = [
     ]
   },
   {
-    title: "Mobile Banking App",
+    title: "Krypto",
     description: "Sleek and intuitive banking app interface focusing on user experience and accessibility.",
-    image: "/api/placeholder/500/300",
-    technologies: ["Figma", "Adobe XD", "User Research", "Wireframing"],
+    image: "/Krypto.png",
+    technologies: ["Figma", "UI/UX", "Design System", "Prototyping"],
     features: [
       "Conducted user research with 50+ participants to inform design decisions",
       "Designed seamless user flows for complex financial transactions"
@@ -58,8 +58,8 @@ const designProjects = [
   {
     title: "Social Media Platform",
     description: "Complete design system and UI kit for a modern social networking platform.",
-    image: "/api/placeholder/500/300",
-    technologies: ["Figma", "Component Library", "Dark Mode", "Responsive"],
+    image: "/Kaixin.png",
+    technologies: ["Figma", "UI/UX", "Design System", "Prototyping"],
     features: [
       "Built reusable component library with 100+ variants",
       "Implemented dark mode support across all components"
@@ -76,7 +76,7 @@ const ProjectGrid = ({ projects }) => (
       >
         <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
           <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
-            Project Screenshot
+            <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
           </div>
         </div>
 
@@ -95,14 +95,14 @@ const ProjectGrid = ({ projects }) => (
             ))}
           </div>
 
-          <div className="space-y-2 pt-2">
+          {/* <div className="space-y-2 pt-2">
             {project.features.map((feature, featureIndex) => (
               <div key={featureIndex} className="flex gap-2">
                 <ArrowRight className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-gray-600">{feature}</p>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex gap-3 pt-4">
             <button className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-colors group/btn">

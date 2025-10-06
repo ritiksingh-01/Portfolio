@@ -12,7 +12,7 @@ const Footer = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com/achyut21"
+              href="https://github.com/ritiksingh-01"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 hover:scale-110"
@@ -21,7 +21,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/achyutkatiyar2103/"
+              href="https://www.linkedin.com/in/ritik-singh01/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 border border-gray-200 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 hover:scale-110"
@@ -30,7 +30,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/ritiksingh_01"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 border border-gray-200 hover:bg-blue-400 hover:text-white hover:border-blue-400 transition-all duration-300 hover:scale-110"
@@ -39,7 +39,7 @@ const Footer = () => {
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="mailto:achyutkatiyar21@gmail.com"
+              href="mailto:ritiksingh.rsr01@gmail.com"
               className="p-3 rounded-full bg-gray-100 border border-gray-200 hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >
