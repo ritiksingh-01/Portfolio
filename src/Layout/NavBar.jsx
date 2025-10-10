@@ -1,5 +1,3 @@
-"use client"
-
 import { Sun, Moon } from "lucide-react"
 import { useTheme } from "../contexts/ThemeContext"
 import { FaMusic } from "react-icons/fa";
@@ -81,15 +79,6 @@ function NavBar() {
             <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
           </a>
           <a
-            href="#skills"
-            className={`text-sm font-medium relative group transition-colors duration-300 ${
-              theme === "dark" ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
-            }`}
-          >
-            Skills
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
-          </a>
-          <a
             href="#projects"
             className={`text-sm font-medium relative group transition-colors duration-300 ${
               theme === "dark" ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
@@ -98,6 +87,15 @@ function NavBar() {
             Projects
             <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
           </a>
+          {/* <a
+            href="#skills"
+            className={`text-sm font-medium relative group transition-colors duration-300 ${
+              theme === "dark" ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
+            }`}
+          >
+            Skills
+            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
+          </a> */}
           <a
             href="#contact"
             className={`text-sm font-medium relative group transition-colors duration-300 ${
