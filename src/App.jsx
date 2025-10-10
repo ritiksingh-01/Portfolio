@@ -14,9 +14,9 @@ function App() {
     <div>
       <HeroSection/>
       <AboutSection/>
+      <FeaturedProjects/>
       <TechnicalSkills/>
       <Achievements/>
-      <FeaturedProjects/>
       <ContactForm/>
       <Footer/>
     </div>

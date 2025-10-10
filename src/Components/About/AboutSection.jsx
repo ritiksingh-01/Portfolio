@@ -1,16 +1,14 @@
-import { BookOpen, GraduationCap, Award, Code2 } from "lucide-react";
-import { useTheme } from "../../contexts/ThemeContext";
+import { BookOpen, GraduationCap, Award, Code2, Sparkles } from "lucide-react";
 
 const AboutSection = () => {
-  const { theme } = useTheme();
-  
   const education = [
     {
       degree: "B.Tech in AI & Data Science",
       institution: "GL Bajaj Group Of Institutions, Mathura",
       university: "AKTU",
       period: "2022 – 2026",
-      description: "Specializing in machine learning, data analytics, and AI applications with hands-on experience in modern development frameworks."
+      description: "Specializing in machine learning, data analytics, and AI applications with hands-on experience in modern development frameworks.",
+      current: true
     },
     {
       degree: "Class XII (CBSE)",
@@ -30,99 +28,143 @@ const AboutSection = () => {
     {
       icon: Award,
       title: "GSSoC Rank #46",
-      description: "Out of 32,000+ participants"
+      description: "Out of 32,000+ participants",
+      color: "from-yellow-50 to-orange-50",
+      iconColor: "text-orange-600",
+      borderColor: "border-orange-200"
     },
     {
       icon: Code2,
       title: "SIH Qualified",
-      description: "Cleared internal hackathon"
+      description: "Cleared internal hackathon",
+      color: "from-green-50 to-emerald-50",
+      iconColor: "text-green-600",
+      borderColor: "border-green-200"
     },
     {
       icon: GraduationCap,
       title: "Open Source",
-      description: "Active contributor"
+      description: "Active contributor",
+      color: "from-blue-50 to-indigo-50",
+      iconColor: "text-blue-600",
+      borderColor: "border-blue-200"
     }
   ];
 
   return (
-    <section className="py-24 px-6 relative bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900">About Me</h2>
-          <p className="text-xl text-gray-600">Get to know more about my journey</p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Passionate developer crafting innovative solutions at the intersection of AI and web development
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-8 mb-12">
-          {/* Main About Content - Takes up 3 columns */}
-          <div className="lg:col-span-3 space-y-8">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Main About Content - Takes up 2 columns */}
+          <div className="lg:col-span-2 space-y-6">
             {/* Introduction Card */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <div className="w-1 h-8 bg-blue-500 rounded-full"></div>
-                Who I Am
-              </h3>
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-1 h-16 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full flex-shrink-0"></div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">Who I Am</h3>
+                  <p className="text-sm text-blue-600 font-medium">Full Stack Developer & AI Enthusiast</p>
+                </div>
+              </div>
+              
               <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p className="text-lg">
+                <p className="text-base">
                   I'm a passionate <span className="font-semibold text-blue-600">Artificial Intelligence and Data Science</span> undergraduate with an unwavering dedication to frontend development and innovative problem-solving.
                 </p>
-                <p className="text-lg">
-                  My journey in technology is fueled by an insatiable curiosity and commitment to excellence. Whether crafting beautiful, responsive user interfaces with <span className="font-semibold">React.js and Tailwind CSS</span>, tackling complex algorithmic challenges, or contributing to meaningful open-source projects, I approach every challenge with precision and enthusiasm.
+                <p className="text-base">
+                  My journey in technology is fueled by an insatiable curiosity and commitment to excellence. Whether crafting beautiful, responsive user interfaces with <span className="font-semibold text-gray-900">React.js and Tailwind CSS</span>, tackling complex algorithmic challenges, or contributing to meaningful open-source projects, I approach every challenge with precision and enthusiasm.
                 </p>
-                <p className="text-lg">
+                <p className="text-base">
                   Through competitive programming and hackathons, I've sharpened my analytical thinking and collaborative skills, constantly pushing the boundaries of what's possible with code.
                 </p>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-200">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-1">550+</div>
+                  <div className="text-sm text-gray-600">Problems Solved</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-1">50+</div>
+                  <div className="text-sm text-gray-600">Open Source PRs</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-1">10+</div>
+                  <div className="text-sm text-gray-600">Projects Built</div>
+                </div>
               </div>
             </div>
 
             {/* Achievements Grid */}
             <div className="grid md:grid-cols-3 gap-4">
-              {highlights.map((item, index) => (
-                <div key={index} className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <item.icon className="w-8 h-8 text-blue-600 mb-3" />
-                  <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
-              ))}
+              {highlights.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <div 
+                    key={index} 
+                    className={`bg-gradient-to-br ${item.color} rounded-xl p-6 border ${item.borderColor} hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                  >
+                    <div className={`${item.iconColor} mb-3`}>
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-1 text-base">{item.title}</h4>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Education Timeline - Takes up 2 columns */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 sticky top-24">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <BookOpen className="w-6 h-6 text-blue-600" />
+          {/* Education Timeline - Takes up 1 column */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 lg:sticky lg:top-24">
+              <div className="flex items-center gap-3 mb-6 pb-6 border-b border-gray-200">
+                <div className="p-2.5 bg-blue-100 rounded-xl">
+                  <BookOpen className="w-5 h-5 text-blue-600" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">Education</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Education</h3>
               </div>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {education.map((edu, index) => (
-                  <div key={index} className="relative pl-6 border-l-2 border-blue-200">
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-blue-100"></div>
+                  <div key={index} className="relative pl-6 border-l-2 border-gray-200 last:border-l-0 pb-6 last:pb-0">
+                    <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full ${
+                      edu.current ? 'bg-blue-500 ring-4 ring-blue-100 animate-pulse' : 'bg-gray-300 ring-4 ring-gray-100'
+                    }`}></div>
                     
-                    <div className="mb-1">
-                      <h4 className="text-lg font-bold text-gray-900">{edu.degree}</h4>
-                      <p className="text-sm font-semibold text-gray-700">{edu.institution}</p>
+                    <div className="space-y-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <h4 className="text-sm font-bold text-gray-900 leading-tight">{edu.degree}</h4>
+                        {edu.current && (
+                          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium flex-shrink-0">
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs font-semibold text-gray-700">{edu.institution}</p>
                       {edu.university && (
                         <p className="text-xs text-gray-500">{edu.university}</p>
                       )}
+                      <p className="text-xs text-blue-600 font-semibold pt-1">{edu.period}</p>
+                      <p className="text-xs text-gray-600 leading-relaxed pt-2">{edu.description}</p>
                     </div>
-                    
-                    <p className="text-sm text-blue-600 font-semibold mb-2">{edu.period}</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{edu.description}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
-};
-
+}
 export default AboutSection;
