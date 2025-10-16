@@ -1,26 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import HeroSection from './Components/HeroSection/HeroSection'
-import AboutSection from './Components/About/AboutSection'
-import Achievements from './Components/About/Achievemente'
-import FeaturedProjects from './Components/Projects/FeaturedProjects'
-import TechnicalSkills from './Components/Skills/TechnicalSkills'
-import ContactForm from './Components/Contact/ContactForm'
-import Footer from './Layout/Footer'
-function App() {
-  const [count, setCount] = useState(0)
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
+import Header from "./Layout/Header";
+import Footer from "./Layout/Footer";
 
+function App() {
   return (
     <div>
-      <HeroSection/>
-      <AboutSection/>
-      <FeaturedProjects/>
-      <TechnicalSkills/>
-      <Achievements/>
-      <ContactForm/>
-      <Footer/>
+      <Header />
+      <Routes className="pt-50">
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

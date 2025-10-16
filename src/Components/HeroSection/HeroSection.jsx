@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Mail,
   ArrowRight,
@@ -9,7 +9,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import LightRays from "./LightRays";
-import NavBar from "../../Layout/NavBar";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const shineAnimation = `
@@ -178,7 +177,6 @@ const HeroSection = () => {
           : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
       }`}
     >
-      {/* Enhanced Light Rays - Only in Dark Mode */}
       {theme === "dark" && (
         <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
           <LightRays
@@ -196,8 +194,6 @@ const HeroSection = () => {
           />
         </div>
       )}
-
-      {/* Light Mode Background Pattern */}
       {theme === "light" && (
         <div className="absolute inset-0 opacity-20" style={{ zIndex: 1 }}>
           <div
@@ -212,8 +208,6 @@ const HeroSection = () => {
           />
         </div>
       )}
-
-      {/* Theme-aware gradient overlays */}
       <div
         className={`absolute inset-0 transition-colors duration-500 ${
           theme === "dark"
@@ -222,8 +216,6 @@ const HeroSection = () => {
         }`}
         style={{ zIndex: 3 }}
       />
-
-      {/* Subtle theme-aware morphing shapes */}
       <div
         className={`absolute top-16 right-16 w-20 h-20 animate-morph opacity-10 transition-colors duration-500 ${
           theme === "dark"
@@ -240,14 +232,8 @@ const HeroSection = () => {
         }`}
         style={{ zIndex: 3, animationDelay: "2s" }}
       />
-
-      {/* Navigation */}
-      <NavBar />
-
-      {/* Main Content Container - Fixed spacing */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-0 px-6 text-center pt-24 pb-16">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         <div className="max-w-5xl mx-auto space-y-8">
-          {/* Theme-aware Badge - Reduced top margin */}
           <div className="flex justify-center">
             <div
               className={`inline-flex items-center space-x-3 backdrop-blur-xl border rounded-full px-5 py-2.5 shadow-lg hover:scale-105 transition-all duration-500 ${
@@ -269,8 +255,6 @@ const HeroSection = () => {
               <Code className="w-3.5 h-3.5 text-blue-400" />
             </div>
           </div>
-
-          {/* Theme-aware Main Heading - Reduced spacing */}
           <div
             className={`${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
             style={{ animationDelay: "0.4s" }}
@@ -301,11 +285,13 @@ const HeroSection = () => {
               </span>
             </h1>
           </div>
-
-          {/* Theme-aware Profile Section - Fixed image dimensions */}
           <div
             className={`flex italic items-center justify-center space-x-4 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
-            style={{ animationDelay: "1.2s" , fontFamily: '"Audiowide", sans-serif', fontWeight: 400}}
+            style={{
+              animationDelay: "1.2s",
+              fontFamily: '"Audiowide", sans-serif',
+              fontWeight: 400,
+            }}
           >
             <span
               className={`text-lg md:text-xl font-light ${theme === "dark" ? "text-white" : "text-gray-700"}`}
@@ -337,8 +323,6 @@ const HeroSection = () => {
               a MERN Stack Developer
             </span>
           </div>
-
-          {/* Theme-aware CTA Section - Reduced spacing */}
           <div
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
             style={{ animationDelay: "1.4s" }}
@@ -368,16 +352,26 @@ const HeroSection = () => {
               <span>Download CV</span>
             </button>
           </div>
-
-          {/* Theme-aware Social Links - Reduced spacing */}
           <div
             className={`flex justify-center space-x-4 mt-6 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
             style={{ animationDelay: "1.6s" }}
           >
             {[
-              { icon: Github, label: "GitHub", color: "hover:bg-gray-700" },
-              { icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
-              { icon: Mail, label: "Email", color: "hover:bg-green-600" },
+              {
+                icon: Github,
+                label: "GitHub",
+                color: "hover:bg-gray-700",
+              },
+              {
+                icon: Linkedin,
+                label: "LinkedIn",
+                color: "hover:bg-blue-600",
+              },
+              {
+                icon: Mail,
+                label: "Email",
+                color: "hover:bg-green-600",
+              },
             ].map(({ icon: Icon, label, color }, index) => (
               <button
                 key={label}
@@ -399,8 +393,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Minimal decorative elements */}
       <div
         className={`absolute top-1/4 left-16 w-1.5 h-1.5 rounded-full opacity-30 transition-colors duration-500 ${
           theme === "dark" ? "bg-blue-400/40" : "bg-blue-600/40"
